@@ -1,8 +1,9 @@
 import { createStore } from 'redux';
-import rootReducer from './reducers';
+import rootReducer from './reducers/index';
 
 const initialState = {
-  books: [
+  // get this array from mapStoreToProps e.g state.books then chage booksList to books
+  booksList: [
     {
       id: Math.random(),
       title: 'The Hunger Games',
