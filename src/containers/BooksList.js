@@ -46,7 +46,6 @@ const BooksList = ({
 
 const filterBooksByCategory = (state) => {
   const { booksList, filter } = state;
-  console.log(filter);
   if (filter !== 'All') {
     return booksList.filter((book) => (book.category === filter));
   }
