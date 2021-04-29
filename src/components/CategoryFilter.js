@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { categories } from '../actions/actionType';
 
-function CategoryFilter() {
+function CategoryFilter({ handleFilterChange }) {
   return (
     <div className="selectBox">
-      <select name="filterCategory" id="filterCat">
+      <select name="filter" id="filter" onChange={(e) => { handleFilterChange(e.target.value); }}>
         <option value="All">All</option>
         {
         categories.map((item) => (
@@ -19,3 +20,7 @@ function CategoryFilter() {
 }
 
 export default CategoryFilter;
+
+CategoryFilter.propTypes = {
+  handleFilterChange: PropTypes.func.isRequired,
+};
