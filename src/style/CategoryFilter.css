@@ -1,3 +1,28 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 38px;
+  padding: 23px 100px 23px 100px;
+  background-color: var(--white);
+}
+
+.nav_middle {
+  display: flex;
+  align-items: center;
+    justify-content: space-between;
+    width: 140px
+}
+
 .nav_logo span {
+  font-size: 30px;
+  font-weight: bold;
   color: #0290ff;
+}
+
+.nav_end {
+  padding: 5px;
+    border: solid 1px #e8e8e8;
+    border-radius: 50%;
+    color: #0290ff;
 }
