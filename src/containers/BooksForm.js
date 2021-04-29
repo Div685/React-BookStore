@@ -49,10 +49,6 @@ const BooksForm = (props) => {
       </select>
 
       <button type="submit" onClick={handleSubmit}>Submit</button>
-      <p>
-        hello:
-        {title}
-      </p>
     </form>
   );
 };
