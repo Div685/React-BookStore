@@ -57,13 +57,13 @@ const BooksForm = (props) => {
   );
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   createBookAction: (book) => {
-//     dispatch(createBookAction(book));
-//   },
-// });
+const mapDispatchToProps = (dispatch) => ({
+  createBookAction: (book) => {
+    dispatch(createBookAction(book));
+  },
+});
 
-export default connect(null, { createBookAction })(BooksForm);
+export default connect(null, mapDispatchToProps)(BooksForm);
 
 BooksForm.propTypes = {
   createBookAction: PropTypes.func.isRequired,
