@@ -7,3 +7,106 @@
     border: solid 1px #e8e8e8;
     background-color: #fff;
 }
+
+/* Left Section */
+
+.book_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.book_left-top .book_left-category {
+  width: 49px;
+    height: 18px;
+    margin: 0 39px 0 0;
+    opacity: 0.5;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.book_left-top .book_left-title {
+  width: 197px;
+    height: 29px;
+    margin: 3px 3px 0 0;
+    font-family: RobotoSlab;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: #121212;
+}
+
+.book_left-top .book_left-author {
+  width: 107px;
+  height: 19px;
+  margin: 4px 0 0;
+  font-family: RobotoSlab;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf
+}
+
+.book_left-bottom {
+  display: flex;
+}
+
+.book_left-bottom p {
+  margin: 21px 15px 2px 0;
+    font-family: RobotoSlab;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4386bf;
+    border-right: 1px solid #e0e0e0;
+    padding-right: 15px;
+}
+
+.book_left-bottom p:last-child {
+  border: none;
+}
+
+/* middle Section */
+
+.book_middle {
+  display: flex;
+  align-items: center;
+}
+
+.oval-2 {
+  width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 1px #379cf6;
+    border-width: 5px
+}
+
+.book_middle-text {
+  display: flex;
+    flex-direction: column;
+    margin: 0px 0px 0 20px
+}
+
+.book_middle-text h4 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 400
+}
+
+.book_middle-text span {
+  font-size: 14px;
+  color: #999a9c;
+}

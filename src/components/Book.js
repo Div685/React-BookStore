@@ -12,12 +12,12 @@ function Book({ book, handleRemoveBook }) {
   return (
     <div className="div_books">
       <div className="book_left">
-        <div>
-          <p>{category}</p>
-          <p>{title}</p>
-          <p>Suzanne Collins</p>
+        <div className="book_left-top">
+          <span className="book_left-category">{category}</span>
+          <p className="book_left-title">{title}</p>
+          <span className="book_left-author">Author</span>
         </div>
-        <div>
+        <div className="book_left-bottom">
           <p>Comment</p>
           <p>Remove</p>
           <p>Edit</p>
@@ -25,7 +25,7 @@ function Book({ book, handleRemoveBook }) {
       </div>
       <div className="book_middle">
         <div className="oval-2" />
-        <div>
+        <div className="book_middle-text">
           <h4>80%</h4>
           <span>Completed</span>
         </div>
