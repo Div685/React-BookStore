@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { removeBookAction, filterBookAction } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
+import '../style/Book.css';
 
 const BooksList = ({
   booksList, removeBookAction, filterBookAction,
@@ -28,7 +29,7 @@ const BooksList = ({
               handleRemoveBook={handleRemoveBook}
             />
           ))
-          : (<tr><td>No Books! </td></tr>)}
+          : (<div className="noBook_error">No Books! </div>)}
       </div>
       {/* <table> */}
       {/* <tbody>
