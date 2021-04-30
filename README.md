@@ -5,6 +5,7 @@
 
 ### You can access a Live Demo [HERE](https://bookstore-redux-v1.herokuapp.com/)
 
+![Screenshot](./screencapture.png)
 
 ## Built With
 
