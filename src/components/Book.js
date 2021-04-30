@@ -4,7 +4,6 @@ import '../style/Book.css';
 
 function Book({ book, handleRemoveBook }) {
   const {
-    // id,
     title,
     category,
   } = book;
@@ -36,12 +35,6 @@ function Book({ book, handleRemoveBook }) {
         <button type="button">UPDATE PROGRESS</button>
       </div>
     </div>
-    // <tr>
-    //   <td>{id}</td>
-    //   <td>{title}</td>
-    //   <td>{category}</td>
-    //   <td><button type="button" onClick={() => handleRemoveBook(book)}>Remove Book</button></td>
-    // </tr>
   );
 }
 

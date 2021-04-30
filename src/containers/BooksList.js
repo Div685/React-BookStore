@@ -31,11 +31,6 @@ const BooksList = ({
           ))
           : (<div className="noBook_error">No Books! </div>)}
       </div>
-      {/* <table> */}
-      {/* <tbody>
-
-        </tbody>
-      </table> */}
     </>
   );
 };
