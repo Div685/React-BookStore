@@ -23,10 +23,6 @@
     font-family: Montserrat;
     font-size: 14px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
 }
 
 .book_left-top .book_left-title {
@@ -36,9 +32,6 @@
     font-family: RobotoSlab;
     font-size: 22px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
     letter-spacing: -0.2px;
     color: #121212;
 }
@@ -50,10 +43,6 @@
   font-family: RobotoSlab;
   font-size: 14px;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #4386bf
 }
 
@@ -66,13 +55,23 @@
     font-family: RobotoSlab;
     font-size: 14px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: #4386bf;
     border-right: 1px solid #e0e0e0;
     padding-right: 15px;
+    cursor: pointer;
+}
+
+.book_left-bottom button {
+  margin: 21px 15px 2px 0;
+    font-family: RobotoSlab;
+    font-size: 14px;
+    font-weight: 300;
+    color: #4386bf;
+    padding-right: 15px;
+    cursor: pointer;
+    background: none;
+    border-style: none;
+    border-right: 1px solid #e0e0e0;
 }
 
 .book_left-bottom p:last-child {
@@ -84,6 +83,7 @@
 .book_middle {
   display: flex;
   align-items: center;
+    margin: 0 -150px 0 0;
 }
 
 .oval-2 {
@@ -109,4 +109,37 @@
 .book_middle-text span {
   font-size: 14px;
   color: #999a9c;
+}
+
+/* Right Section */
+
+.book_right {
+  border-left: 1px solid #e0e0e0;
+    padding-left: 60px;
+}
+
+.book_right p {
+  margin: 10px 0 25px 0;
+    font-family: RobotoSlab;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: -0.4px
+}
+
+.book_right span {
+  opacity: 0.5;
+    font-family: RobotoSlab;
+    font-size: 13px;
+    font-weight: 300;
+    color: #121212
+}
+
+.book_right button {
+  width: 165px;
+  height: 33px;
+  border-radius: 3px;
+  background: #0290ff;
+  color: #fff;
+  border: none;
+  cursor: pointer
 }

@@ -19,7 +19,7 @@ function Book({ book, handleRemoveBook }) {
         </div>
         <div className="book_left-bottom">
           <p>Comment</p>
-          <p>Remove</p>
+          <button type="button" onClick={() => handleRemoveBook(book)}>Remove</button>
           <p>Edit</p>
         </div>
       </div>
@@ -31,9 +31,9 @@ function Book({ book, handleRemoveBook }) {
         </div>
       </div>
       <div className="book_right">
-        <p>Current Chapter</p>
+        <span>Current Chapter</span>
         <p>Chapter 17</p>
-        <button type="button" onClick={() => handleRemoveBook(book)}>Remove Book</button>
+        <button type="button">UPDATE PROGRESS</button>
       </div>
     </div>
     // <tr>
