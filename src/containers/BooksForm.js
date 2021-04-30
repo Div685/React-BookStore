@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createBookAction } from '../actions/index';
 import { categories } from '../actions/actionType';
+import '../style/BooksForm.css';
 
 const BooksForm = (props) => {
   const [title, setTitle] = useState('');
@@ -34,21 +35,24 @@ const BooksForm = (props) => {
   };
 
   return (
-    <form>
-      <input type="text" name="title" value={title} onChange={handleChangeTitle} />
+    <div className="form_section">
+      <h3>Add New Book</h3>
+      <form className="form">
+        <input className="form_input" placeholder="Book title" type="text" name="title" value={title} onChange={handleChangeTitle} />
 
-      <select name="category" id="category" value={category} onChange={handleChangeCategory}>
-        {
+        <select className="form_select" name="category" id="category" value={category} onChange={handleChangeCategory}>
+          {
         categories.map((item) => (
           <option value={item} key={item}>
             {item}
           </option>
         ))
         }
-      </select>
+        </select>
 
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-    </form>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
+      </form>
+    </div>
   );
 };
 
