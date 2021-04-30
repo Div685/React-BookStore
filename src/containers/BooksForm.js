@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createBookAction } from '../actions/index';
-
-const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+import { categories } from '../actions/actionType';
 
 const BooksForm = (props) => {
   const [title, setTitle] = useState('');
