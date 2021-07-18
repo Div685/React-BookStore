@@ -10,6 +10,4 @@ const authAxios = () => axios.create({
   mode: 'cors',
 });
 
-console.log(authAxios().get('books'));
-
 export default authAxios;
