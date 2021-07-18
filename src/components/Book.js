@@ -1,20 +1,25 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../style/Book.css';
 
 function Book({ book, handleRemoveBook }) {
   const {
+    id,
     title,
-    category,
+    author,
+    category: {
+      name,
+    },
   } = book;
 
   return (
     <div className="div_books">
       <div className="book_left">
         <div className="book_left-top">
-          <span className="book_left-category">{category}</span>
+          <span className="book_left-category">{name}</span>
           <p className="book_left-title">{title}</p>
-          <span className="book_left-author">Author</span>
+          <span className="book_left-author">{author}</span>
         </div>
         <div className="book_left-bottom">
           <p>Comment</p>
@@ -42,7 +47,10 @@ Book.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }),
   }).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
 };
