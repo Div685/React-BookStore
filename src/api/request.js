@@ -1,13 +1,15 @@
-export const getBooks = async () => {
-  const url = 'https://bookstore-api-rails.herokuapp.com/books';
-  const request = await fetch(url);
-  const data = await request.json();
-  return data;
-};
+import axios from 'axios';
+import apiUrl from './apiUrl';
 
-export const getCategories = async () => {
-  const url = 'https://bookstore-api-rails.herokuapp.com/categories';
-  const request = await fetch(url);
-  const data = await request.json();
-  return data;
-};
+const authAxios = () => axios.create({
+  baseURL: apiUrl,
+  data: {},
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  mode: 'cors',
+});
+
+console.log(authAxios().get('books'));
+
+export default authAxios;
