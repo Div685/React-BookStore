@@ -1,9 +1,13 @@
 import { CHANGE_FILTER } from '../actions/actionType';
 
-const filterReducer = (state = 'All', action) => {
+const filterReducerDefaultState = {
+  book: {},
+};
+
+const filterReducer = (state = filterReducerDefaultState, action) => {
   switch (action.type) {
     case CHANGE_FILTER:
-      return action.filter;
+      return { ...state, book: action.filter };
     default:
       return state;
   }
