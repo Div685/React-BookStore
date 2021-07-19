@@ -13,3 +13,13 @@ export const getCategories = async () => {
     .then((response) => response.data).catch((error) => error);
   return response;
 };
+
+export const addBooks = async (bName) => {
+  const response = await authAxios().post('books', {
+    books: {
+      name: bName,
+    },
+  })
+    .then((response) => response.data).catch((error) => error);
+  return response;
+};
