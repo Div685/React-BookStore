@@ -3,6 +3,10 @@ export const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', '
 // Add Books
 export const ADD_BOOK = 'ADD_BOOK';
 export const LOAD_BOOK = 'LOAD_BOOK';
+export const GET_BOOK = 'GET_BOOK';
+
+// Category
+export const GET_CATEGORY = 'GET_CATEGOTY';
 
 // Remove Functionality
 export const DELETE_BOOK = 'DELETE_BOOK';
