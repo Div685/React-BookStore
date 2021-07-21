@@ -1,4 +1,4 @@
-import { addBookAction } from '../actions';
+import { addBookAction, getBookAction, getCategoriesAction } from '../actions';
 import store from '../store';
 import authAxios from './request';
 
@@ -10,16 +10,16 @@ export const getBooks = async () => {
 
 export const getCategories = async () => {
   const response = await authAxios().get('categories')
-    .then((response) => response.data).catch((error) => error);
+    .then((response) => store.dispatch(getCategoriesAction(response.data))).catch((error) => error);
   return response;
 };
 
-export const addBooks = async (bName) => {
+export const addBooks = async (bName, cId) => {
   const response = await authAxios().post('books', {
-    books: {
-      name: bName,
-    },
+    title: bName,
+    author: 'TVD',
+    category_id: cId,
   })
-    .then((response) => response.data).catch((error) => error);
+    .then((response) => store.dispatch(getBookAction(response.data))).catch((error) => error);
   return response;
 };
