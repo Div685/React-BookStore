@@ -1,14 +1,18 @@
-import { useState } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { createBookAction } from '../actions/index';
-import { categories } from '../actions/actionType';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import '../style/BooksForm.css';
+import { addBooks, getCategories } from '../api/fetchData';
+import { getBookAction } from '../actions/index';
 
-const BooksForm = (props) => {
+const BooksForm = () => {
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('Action');
-  const id = Math.random();
+  const [category, setCategory] = useState('');
+  const [message, setMessage] = useState('');
+  const categories = useSelector((state) => state.categories.categories);
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   const handleChangeTitle = (event) => {
     setTitle(
@@ -22,48 +26,46 @@ const BooksForm = (props) => {
     );
   };
 
+  const handleClickData = async (title, category) => {
+    try {
+      const response = await addBooks(title, category);
+      if (response.status === 'Created') {
+        setMessage('SuccessFully Created a Book');
+        getBookAction(response.books);
+      } else {
+        setMessage(response.message);
+      }
+    } catch {
+      setMessage('Sorry something Went Wrong!');
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const book = {
-      id,
-      title,
-      category,
-    };
-    props.createBookAction(book);
-    setTitle('');
-    setCategory('Action');
+    handleClickData(title, category);
   };
 
   return (
     <div className="form_section">
+      {message}
       <h3>Add New Book</h3>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <input className="form_input" placeholder="Book title" type="text" name="title" value={title} onChange={handleChangeTitle} />
 
-        <select className="form_select" name="category" id="category" value={category} onChange={handleChangeCategory}>
+        <select className="form_select" name="category" id="category" onChange={handleChangeCategory}>
           {
         categories.map((item) => (
-          <option value={item} key={item}>
-            {item}
+          <option value={item.id} key={item.id}>
+            {item.name}
           </option>
         ))
         }
         </select>
 
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  createBookAction: (book) => {
-    dispatch(createBookAction(book));
-  },
-});
-
-export default connect(null, mapDispatchToProps)(BooksForm);
-
-BooksForm.propTypes = {
-  createBookAction: PropTypes.func.isRequired,
-};
+export default BooksForm;
