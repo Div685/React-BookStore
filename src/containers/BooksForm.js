@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import '../style/BooksForm.css';
 import { addBooks, getCategories } from '../api/fetchData';
 import { getBookAction } from '../actions/index';
 
 const BooksForm = () => {
+  const history = useHistory();
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState(1);
   const [message, setMessage] = useState('');
   const categories = useSelector((state) => state.categories.categories);
 
@@ -32,6 +34,7 @@ const BooksForm = () => {
       if (response.status === 'Created') {
         setMessage('SuccessFully Created a Book');
         getBookAction(response.books);
+        history.push('/');
       } else {
         setMessage(response.message);
       }
