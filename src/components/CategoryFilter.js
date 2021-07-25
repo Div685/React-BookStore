@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PersonIcon from '@material-ui/icons/Person';
-import { categories } from '../actions/actionType';
 import '../style/CategoryFilter.css';
+import { useSelector } from 'react-redux';
 
 function CategoryFilter({ handleFilterChange }) {
+  const categories = useSelector((state) => state.categories.categories);
+
   return (
     <div className="nav">
       <div className="nav_logo">
@@ -16,8 +18,8 @@ function CategoryFilter({ handleFilterChange }) {
           <option value="All">All</option>
           {
           categories.map((item) => (
-            <option value={item} key={item}>
-              {item}
+            <option value={item.id} key={item.id}>
+              {item.name}
             </option>
           ))
           }
