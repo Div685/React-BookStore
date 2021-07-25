@@ -1,4 +1,6 @@
-import { addBookAction, getBookAction, getCategoriesAction } from '../actions';
+import {
+  addBookAction, filterBookAction, getBookAction, getCategoriesAction,
+} from '../actions';
 import store from '../store';
 import authAxios from './request';
 
@@ -21,5 +23,11 @@ export const addBooks = async (bName, cId) => {
     category_id: cId,
   })
     .then((response) => store.dispatch(getBookAction(response.data))).catch((error) => error);
+  return response;
+};
+
+export const filterBooks = async (cId) => {
+  const response = await authAxios().get(`categories/filter/${cId}`)
+    .then((response) => store.dispatch(filterBookAction(response.data))).catch((error) => error);
   return response;
 };
